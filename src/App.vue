@@ -1,37 +1,70 @@
-<script setup>
-import { ref } from 'vue'
-import Ex1 from './components/Ex1.vue';
-import Ex2 from './components/Ex2.vue';
-import Ex3 from './components/Ex3.vue';
-import Ex4 from './components/Ex4.vue';
-
-const pages = { Ex1, Ex2, Ex3, Ex4 }
-const activeComp = ref("Ex1")
-</script>
-
 <template>
-  <h1>장경건의 VUE 과제방 ↓</h1>
-  
-  <button @click="activeComp = 'Ex1'">bind</button>
-  <button @click="activeComp = 'Ex2'">if</button>
-  <button @click="activeComp = 'Ex3'">show</button>
-  <button @click="activeComp = 'Ex4'">for</button>
-
-  <div id="comp_view">
-      <KeepAlive>
-        <component :is="pages[activeComp]"></component>
-      </KeepAlive>
+  <h1>장경건의 Study Room</h1>
+  <h2>현재 경로: <span class="path">{{ route.path }}</span></h2>
+  <div>
+    <nav class="nav">
+      <RouterLink to="/">Home</RouterLink>
+      <RouterLink to="/about">About</RouterLink>
+      <RouterLink to="/study">Study</RouterLink>
+      <RouterLink to="/webdesign">WebDesign</RouterLink>
+    </nav>
+    <hr />
+    <RouterView />
   </div>
 </template>
 
+
+<script setup>
+import { useRoute } from 'vue-router'
+
+const route = useRoute()
+</script>
+
+
 <style scoped>
-button{
-  margin: 5px;
-  filter: drop-shadow(0 0 1.5px rgb(58, 56, 56));
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;  
+  justify-content: flex-start; 
+  min-height: 100vh;     
+  text-align: center;
 }
-#comp_view {
-  margin-top: 20px;
-  border: 1px solid orange;
-  border-radius: 10px;
+
+.nav {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin: 20px;
+}
+
+a {
+  padding: 10px 20px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #5da3f2, #d76d77, #ffaf7b);
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  filter: brightness(1.2);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.router-link-active {
+  background: white;                
+  color: #333;                     
+  font-weight: bold;
+  border: 2px solid #333;         
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
+
+.path {
+  color: dodgerblue;
+  font-weight: bold;
+}
+h1, h2 {
+  text-align: center;
 }
 </style>

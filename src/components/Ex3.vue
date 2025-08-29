@@ -1,5 +1,5 @@
 <template>
-    <h1>show</h1>
+    <h1>v-show</h1>
     <hr>
     <!-- 요소존재, 보이고/감추고 -->
    <div v-show="showDiv">이 엘리먼트는 감출 수 있어요</div>

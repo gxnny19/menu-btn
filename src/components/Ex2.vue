@@ -1,5 +1,5 @@
 <template>
-    <h1>if</h1>
+    <h1>v-if</h1>
    <hr>
    <p v-if="typewritersInStock">재고 있음</p>
    <p v-else>재고 없음</p>
@@ -17,7 +17,7 @@
    <hr>
    <div v-if="text2.includes('피자')">
     <p>피자</p>
-    <img src="../assets/img_pizza.svg" alt="피자이미지">
+    <img src="./images/img_pizza.svg" alt="피자이미지">
    </div>
    <p v-else>피자 없음</p>
 </template>

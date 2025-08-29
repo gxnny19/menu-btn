@@ -1,5 +1,5 @@
 <template>
-    <h1>bind</h1>
+    <h1>v-bind</h1>
     <hr>
     <!-- 이미지 import 사용 -->
     <img v-bind:src="img_beach3" alt="./images/img_beach3.jpg">
