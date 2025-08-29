@@ -11,10 +11,7 @@ const activeComp = ref("Ex1")
 
 <template>
   <h1>장경건의 VUE 과제방 ↓</h1>
-  <!-- <Ex1 />
-  <Ex2 />
-  <Ex3 />
-  <Ex4 /> -->
+  
   <button @click="activeComp = 'Ex1'">bind</button>
   <button @click="activeComp = 'Ex2'">if</button>
   <button @click="activeComp = 'Ex3'">show</button>

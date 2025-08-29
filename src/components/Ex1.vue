@@ -2,7 +2,7 @@
     <h1>bind</h1>
     <hr>
     <!-- 이미지 import 사용 -->
-    <img v-bind:src="img_beach3" alt="img_beach3">
+    <img v-bind:src="img_beach3" alt="./images/img_beach3.jpg">
     <hr>
 
     <!-- v-bind:style 글자값 -->
@@ -42,7 +42,7 @@
 
 <script setup>
 import { ref } from "vue"
-import img_beach3 from "../assets/img_beach3.jpg"
+import img_beach3 from "./images/img_beach3.jpg"
 
 const size = ref("20px")
 const size2 = ref(30)
